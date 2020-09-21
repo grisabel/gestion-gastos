@@ -1,0 +1,52 @@
+.body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+h1{
+    background-color: lightblue;
+    font-size: 10vh;
+    text-shadow: 0.06vh 0.3vh gray;
+    padding: 3vw;
+    text-align: center;
+}
+.container-form{
+    background-color: lavender;
+    flex-grow: 1;
+    border: 3vh groove lightblue;
+    
+    
+}
+.form-group{
+    display: flex;
+    flex-direction: column;
+    margin-left: 3vh;
+    margin-bottom: 3vh;
+    margin-top: 3vh;
+    
+}
+
+.form-group_item1{
+    font-size: 3vh;
+    font-weight: bold;
+    margin-bottom: 1vh;
+
+}
+.form-group_item2{
+    margin-right: 5vh;
+    font-size: 2.5vh;
+
+}
+.container-button{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.button{
+    margin-top: 4vh;
+    margin-left: 1vh;
+    margin-right: 1vh;
+    margin-bottom: 2vh;
+    padding: 2vh;
+    font-size: 3vh;
+}

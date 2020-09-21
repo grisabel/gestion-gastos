@@ -1,0 +1,102 @@
+h1{
+    background-color: lightblue;
+    font-size: 8vh;
+    text-shadow: 0.03vh 0.15vh gray;
+    padding: 3vw;
+    text-align: center;
+}
+.container-nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: center;
+}
+.nav_item, .nav_item1{
+    color: black;
+    text-align: center;
+    flex-grow: 1;
+    text-decoration: none;
+    border: 0.5vh solid grey;
+    padding: 0.5vh;
+    background-color: lightgray;
+    font-weight: bold;
+    font-size: 3vh;
+}
+
+.nav_item:hover{
+    border: 0.5vh solid lightgray;
+    background-color: grey;
+}
+.nav_item1:hover{
+    border: 0.5vh solid lightgray;
+    background-color: grey;
+    color:darkred;
+}
+.container-main{
+    background-color: lavender;
+    flex-grow: 1;
+    height: max-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+}
+.main_item{
+    border: 1vh solid lightblue;
+    border-radius: 1vw;
+    margin-bottom: 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin: 4vh;
+    background-color: lightgray;
+    
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    margin:3vh;
+    margin-bottom: 2.5vh;
+    
+}
+.labelC{
+    margin-bottom: 1vh;
+    
+}
+.inputC{
+    font-size: 2.5vh; 
+    background-color: lightgray;
+    border: 0.025vh solid black;
+}
+.button{
+    text-decoration: none;
+    color: black;
+    background-color: lightblue;
+    border: 0.2vw solid grey;
+    width: max-content;
+    padding: 1vh;
+    font-size: 3vh;
+    border-radius: 1vh;
+    padding: 2vh;
+    margin:auto;
+}
+
+.button:hover{
+    background-color:grey;
+    border: 0.2vw solid lightblue; 
+}
+.home-footer{
+    background-color: lightblue;
+    padding: 1vh;
+    display:flex;
+    justify-content: flex-end;
+ 
+}
+.footer_item{
+    background-color: lightblue;
+    margin-right: 1.5vh;
+}
+textarea{
+    resize: none;
+}

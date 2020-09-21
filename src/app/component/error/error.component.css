@@ -1,0 +1,19 @@
+.container-error{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 10vh auto;
+    font-size: 5vh;
+    border: 0.5vh solid red;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    width: 70vw;
+ 
+  
+}
+.error_item1{
+    margin-bottom: 4vh;
+    text-align: center;
+}

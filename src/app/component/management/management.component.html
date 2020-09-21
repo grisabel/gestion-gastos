@@ -1,0 +1,97 @@
+<body>
+    <h1> ADMINISTRA TUS AHORROS</h1> 
+    <nav class="container-nav">
+        <a href="informe-semanal"  class="nav_item">Informe Semanal</a>
+        <a href="informe-mensual"  class="nav_item">Informe Mensual</a>
+        <a href="informe-anual"  class="nav_item">Informe Anual</a>
+        <button (click)=logOut() class="nav_item1">Cerrar sesión</button>
+    </nav>
+    <div class="container-main">
+        <div class="main_item">
+            <form [formGroup]="deposit" (ngSubmit)="aniadirIngreso()">
+                <div class="form-group">
+                    <label class="labelC">Concepto: *</label>
+                    <select matNativeControl required formControlName="capacity" class="inputC"> 
+                        <option value="nomina">Nómina</option>
+                        <option value="ingresosPorIntereses">Ingresos por intereses</option>
+                        <option value="dividendos">Dividendos</option>
+                        <option value="gananciasPatrimoniales ">Ganancias patrimoniales</option>
+                        <option value="rentasYalquileres">Rentas y alquileres</option>
+                        <option value="becasYsubvenciones">Becas y Subvenciones</option>
+                        <option value="ingresosExtraordinarios">Ingresos extraordinarios</option>
+                        <option value="apuestasYjuegos">Apuestas y juegos</option>
+                        <option value="bonificaciones">Bonificaciones</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="labelC">Ingreso(€): *</label>
+                    <input type="number" formControlName="deposit" class="inputC">
+                    <span *ngIf="this.deposit.value.deposit<0" style="color:red">No se puede añadir un ingreso negativo</span>
+                </div>
+                <div class="form-group">
+                    <label class="labelC">Fecha: *</label>
+                    <input type="date" formControlName="date" class="inputC">
+                </div>
+                <div class="form-group">
+                    <label class="labelC">Comentario:</label>
+                    <textarea formControlName="comment" class="inputC" rows="2" cols="20" 
+                    placeholder="Longitud máxima de 40 caracteres"></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Añadir ingreso" class="button" >
+                </div>
+               
+            </form>
+        </div>
+        <div class="main_item">
+            <form [formGroup]="spend"  (ngSubmit)="aniadirGasto()">
+                <div class="form-group">
+                    <label class="labelC">Concepto: *</label>
+                    <select matNativeControl required formControlName="capacity" class="inputC"> 
+                        <option value="hipotecaAlquiler">Hipoteca/Alquiler</option>
+                        <option value="mueblesMenaje">muebles/Menaje</option>
+                        <option value="alimentacion">Alimentación</option>
+                        <option value="mascotas ">Mascotas</option>
+                        <option value="comprasRopaEstetica">Compras/ropa/estética</option>
+                        <option value="movilInternetFijo">Móvil/Internet/Fijo</option>
+                        <option value="luz">Luz</option>
+                        <option value="gas">Gas</option>
+                        <option value="agua">Agua</option>
+                        <option value="comunidad"> Comunidad</option>
+                        <option value="carburantes">Carburantes</option>
+                        <option value="otrosGastosCoche">Otros gastos coche</option>
+                        <option value="seguros">Seguros</option>
+                        <option value="impuestosTasasMultas ">Impuesto/Tasas/Multas</option>
+                        <option value="matriculasCuotas">Matrículas/Cuotas</option>
+                        <option value="cafeCañas">Café/Cañas</option>
+                        <option value="pinchosCenasCopas">Pinchos/Cenas/Copas</option>
+                        <option value="transporteViajesHoteles">Transporte/Viajes/Hoteles</option>
+                        <option value="ocioEspectaculos">Ocio/Espectáculos</option>
+                        <option value="gastosExtraordinarios">Gastos extraordinarios</option>
+                        <option value="perdidasPatrimoniales ">Perdidas patrimoniales</option>
+                        <option value="gastosFinancieros">Gastos financieros</option>
+                        <option value="apuestasYjuegos">Apuestas y Juegos</option>
+                      </select>
+                </div>
+                <div class="form-group">
+                    <label class="labelC">Gasto(€): *</label>
+                    <input type="number" formControlName="spend" class="inputC">
+                    <span *ngIf="this.spend.value.spend<0" style="color:red">No se puede añadir un gasto negativo</span>
+                </div>
+                <div class="form-group">
+                    <label class="labelC">Fecha: *</label>
+                    <input type="date" formControlName="date" class="inputC">
+                </div>
+                <div class="form-group">
+                    <label class="labelC">Comentario:</label>
+                    <textarea formControlName="comment" class="inputC" placeholder="Longitud máxima de 40 caracteres"></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Añadir gasto" class="button">
+                </div>
+            </form>
+        </div>
+    </div>    
+    <footer class="home-footer"><p class="footer_item">Usuario - {{this.identity.email}}</p></footer>  
+</body>
+

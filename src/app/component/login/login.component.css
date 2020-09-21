@@ -1,0 +1,36 @@
+.form-login{
+    display:flex;
+    flex-direction: column;
+    margin-left: 3.5vh;
+}
+.form-login_password ,.form-login_email {
+    display:flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    margin-bottom: 1vh;
+    margin-left: 1vh;
+}
+.form-login_email_item1, .form-login_password_item1{
+    margin-bottom: 1vh;
+}
+.login_item3{
+    margin-left: 4vh;
+    margin-top: 3vh;
+    margin-bottom: 2vh;  
+}
+.login_item3:hover{
+    background-color: #D3D3D3;
+    border: 0.2vw solid lightblue; 
+}
+.login_item3, .register_item4{
+    text-decoration: none;
+    color: black;
+    background-color: lightblue;
+    border: 0.2vw solid grey;
+    width: max-content;
+    padding: 1vh;
+    font-size: 4vh;
+    border-radius: 1vh;
+    padding: 2vh;
+}

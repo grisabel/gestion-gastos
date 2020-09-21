@@ -1,0 +1,96 @@
+<body>
+    <header class="container-home-header">
+      <h1 class="home-header_item">Informe Mensual</h1>
+    </header>
+    <form #weeklyForm="ngForm"  (ngSubmit)="onSubmit()"  class="form-week" >
+      <div  class="week_item">
+          <label>Mes: *</label>
+          <select required [(ngModel)]="this.month" name="month"> 
+              <option value="01">Enero</option>
+              <option value="02">Febrero</option>
+              <option value="03">Marzo</option>
+              <option value="04">Abril</option>
+              <option value="05">Mayo</option>
+              <option value="06">Junio</option>
+              <option value="07">Julio</option>
+              <option value="08">Agosto</option>
+              <option value="09">Septiembre</option>
+              <option value="10">Octubre</option>
+              <option value="11">Noviembre</option>
+              <option value="12">Diciembre</option>
+          </select>
+      </div>
+      <div class="week_item">
+          <label>Año: *</label>
+          <select required [(ngModel)]="this.year" name="year"> 
+              <option value="2020">2020</option>
+          </select>
+      </div>
+      <input type="submit" value="Enviar"  class="week_item"  >
+  </form>
+  <div class="container-diff">
+      <div class="totalDeposit">
+          <p>Ingresos</p>
+          <p>{{this.totalDeposit}}€</p>
+      </div>
+      <div class="totalSpend">
+          <p>Gastos</p>
+          <p>{{this.totalSpend}}€</p>
+      </div>
+      <div class="diff">
+          <p>Diferencia</p>
+          <p></p>
+          <p *ngIf="this.diff>0" style="background-color: SeaGreen;">{{this.diff}}€</p>
+          <p *ngIf="this.diff===0" style="background-color: SteelBlue;">{{this.diff}}€</p>
+          <p  *ngIf="this.diff<0" style="background-color: FireBrick;">{{this.diff}}€</p>
+      </div>
+  </div>
+  
+  <div class="container-tables">
+      <div class="container-deposit">
+          <table class="tabla">
+              <caption>Ingresos</caption>
+              <thead>
+                 <tr>
+                     <th class="tablaTH" data-campo="concepto">Concepto</th>
+                     <th class="tablaTH" data-campo="ingreso">Ingreso(€)</th>
+                     <th class="tablaTH" data-campo="fecha">Fecha</th>
+                     <th class="tablaTH" data-campo="comentario">Comentario</th>
+                 </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let deposit of this.responseDeposit">
+                      <td class="tablaTD" data-campo="concepto">{{deposit.capacity}}</td>
+                      <td class="tablaTD" data-campo="ingreso">{{deposit.deposit}}€</td>
+                      <td class="tablaTD" data-campo="fecha">{{deposit.date.substring(0,10)}}</td>
+                      <td class="tablaTD" data-campo="comentario">{{deposit.comment}}</td>
+                  </tr>
+              </tbody>
+          </table>    
+      </div>
+      <div class="container-spend">
+          <table class="tabla">
+              <caption>Gastos</caption>
+              <thead>
+                 <tr>
+                     <th class="tablaTH" data-campo="concepto">Concepto</th>
+                     <th class="tablaTH" data-campo="ingreso">Gasto(€)</th>
+                     <th class="tablaTH" data-campo="fecha">Fecha</th>
+                     <th class="tablaTH" data-campo="comentario">Comentario</th>
+                 </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let spend of this.responseSpend">
+                      <td class="tablaTD" data-campo="concepto">{{spend.capacity}}</td>
+                      <td class="tablaTD" data-campo="ingreso">{{spend.spend}}€</td>
+                      <td class="tablaTD" data-campo="fecha">{{spend.date.substring(0,10)}}</td>
+                      <td class="tablaTD" data-campo="comentario">{{spend.comment}}</td>
+                  </tr>
+              </tbody>
+          </table>    
+      </div>
+  </div>
+  
+  
+  </body>
+  

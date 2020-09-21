@@ -1,0 +1,62 @@
+<div class="body">
+    <div>
+        <h1>Formulario</h1>
+    </div>
+    <div class="container-form">
+        <form [formGroup]="user" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label class="form-group_item1" for="name" >Nombre: <span>*</span></label>
+                <input class="form-group_item2"  type="text" id="name" placeholder="Nombre" formControlName="name" >
+                <span style="font-size: 2vh; color:red; margin-top: 1vh" *ngIf="this.user.value.name===''">
+                    El nombre es obligatorio
+                </span>
+             
+            </div>
+            <div class="form-group">
+                <label  class="form-group_item1"for="surname">Apellidos:</label>
+                <input  class="form-group_item2" type="text" id="surname" placeholder="Apellidos" formControlName="surname" >
+            </div>
+            <div class="form-group">
+                <label  class="form-group_item1" for="email">Correo Electrónico: <span>*</span></label>
+                <input  class="form-group_item2" type="text" id="email" placeholder="Correo Electrónico" formControlName="email"  >
+                <span style="font-size: 2vh; color:red; margin-top: 1vh" *ngIf="this.user.value.email===''" >
+                    El email es obligatorio
+                </span>
+                <span style="font-size: 2vh; color:red; margin-top: 1vh" *ngIf="!this.validateEmail(this.user.value.email) &&
+                 (this.user.value.email!==null && this.user.value.email!=='')">
+                    El email no tiene un formato válido
+                </span>
+                <span style="font-size: 2vh; color:green; margin-top: 1vh" *ngIf="this.validateEmail(this.user.value.email)">
+                    El email tiene un formato válido
+                </span>
+            </div>
+            <div class="form-group">
+                <label  class="form-group_item1" for="password">Contraseña:<span>* </span> </label>
+                <input  class="form-group_item2" type="password" id="password" placeholder="Contraseña" formControlName="password" >
+                <small style="margin-right: 5vh;"> Contraseña: Mínimo 8 caracteres, entre ellos una letra mayúscula, una minúscula, un número y un caracter especial.</small>
+                <span style="font-size: 2vh; color:red; margin-top: 1vh" *ngIf="!this.validatePasswordComplex(this.user.value.password) && 
+                    (this.user.value.password!==null && this.user.value.password!=='')">
+                    La contraseña no cumple con los requisitos
+                </span>
+                <span style="font-size: 2vh; color:green; margin-top: 1vh" *ngIf="this.validatePasswordComplex(this.user.value.password)">
+                    Contraseña válida
+                </span>
+                <span style="font-size: 2vh; color:red; margin-top: 1vh" *ngIf="this.user.value.password===''">
+                    La contraseña es obligatoria
+                </span>
+                <label style="margin-top: 2vh;" class="form-group_item1" for="password2">Contraseña:<span>* </span> </label>
+                <input  class="form-group_item2" type="password" id="password2" placeholder="Contraseña" formControlName="password2">
+                <span style="font-size: 2vh; color:red; margin-top: 1vh" *ngIf="!this.validatePasswords() && this.user.value.password2!==''">
+                    LAS CONTRASEÑAS NO COINCIDEN
+                </span>
+            </div>
+            <span style="margin-left: 2vh;">* = campo obligatorio</span>
+            <div class="container-button">
+                <input type="submit" class="btn btn-success" value="Enviar Formulario" class="button">
+            </div>
+        </form>
+    </div>
+
+
+</div>
+   

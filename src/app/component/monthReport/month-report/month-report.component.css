@@ -1,0 +1,143 @@
+
+.container-home-header{
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+   
+}
+.home-header_item{
+
+    font-size: 10vh;
+    text-shadow: 0.06vh 0.3vh gray;
+    padding: 3vw;
+    text-align: center;
+   
+}
+.form-week{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: center;
+    padding: 2vh;
+}
+.week_item{
+    margin: 1vh 5vh;
+    font-size: 3vh;
+}
+.container-tables{
+    display: flex;
+    flex-direction: column;
+}
+.container-diff{
+    display:flex;
+    justify-content: space-around;
+    align-content: flex-start;
+    flex-wrap: wrap;
+}
+.container-tables{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+  
+}
+.container-deposit{
+    width: max-content;
+    margin:3vh;   
+    height: 330px;
+    overflow-y: auto;
+
+}
+.container-spend{
+    width: max-content;
+    margin:3vh;
+    height: 330px;
+    overflow-y: auto;
+}
+.totalDeposit p:last-child{
+    border:0.15vh solid black;
+    background-color:honeydew;
+    width: 15vw;
+    height: 5vh;
+    font-size: 4vh;
+    text-align: center;
+  
+
+}
+.totalSpend p:last-child{
+    border:0.15vh solid black;
+    background-color:honeydew;
+    width: 15vw;
+    height: 5vh;
+    font-size: 4vh;
+    text-align: center;
+
+}
+.diff p:last-child{
+    border:0.15vh solid black;
+    width: 15vw;
+    height: 5vh;
+    font-size: 4vh;
+    text-align: center; 
+    background-color:honeydew;
+    
+}
+.tabla{
+    border-collapse: collapse;
+    margin-bottom: 2vh;
+  
+}
+caption{
+    font-size: 5vh;
+    padding:1vh
+}
+.tablaTD{
+    text-align: center;
+    padding: 1vh;
+    border:0.25vh solid black;
+  
+}
+.tablaTH{
+    padding: 1vh;
+    border:0.25vh solid black;
+}
+@media(max-width:480px){
+    .tabla tr{
+        display: flex;
+        flex-direction: column;
+        border: 0.25vh solid black;
+    }
+    .tablaTD{
+        border:none;
+        max-width: none;
+        
+    }
+    .tabla thead{
+        display:none;   
+    }
+    .tabla td[data-campo]{
+        display: flex;
+    }
+    .tabla td[data-campo]::before{
+        content: attr(data-campo);
+        width: 90px;
+        text-align: start;
+        font-weight: bold;
+    }
+    .totalDeposit p:last-child{
+        width: 20vw;
+        font-size: 3vh;
+    }
+    .totalSpend p:last-child{
+        width: 20vw;
+        font-size: 3vh;
+    }
+    .diff p:last-child{
+        width: 20vw;
+        font-size: 3vh;
+    }
+    
+    
+}

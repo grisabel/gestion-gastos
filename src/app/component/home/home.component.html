@@ -1,0 +1,36 @@
+
+<div style="background-color:lavender">
+    <header class="container-home-header">
+        <h1 class="home-header_item">{{title}}</h1>  
+    </header>
+    <div>
+        
+    </div>
+    <section>
+        <div class="container-home-user">
+            <div class="item_parrafo">
+                <p>Esta aplicación te ayudará a tener tus gastos/ingresos ordenados. ¡No lo pienses más, y disfruta 
+                    de ella!</p>
+            </div>
+            <div class="item_user">
+                <div class="container-login">
+                    <p class="login_item1"> Inicia Sesión</p>
+                    <div class="login_item2">
+                        <app-login></app-login>
+                    </div>
+                   
+                </div>
+                <div class="container-register">
+                    <p class="register_item1"> Regístrate</p>
+                    <p class="register_item2">Si todavía no tienes una cuenta, registrate rellenando un sencillo
+                         formulario.</p>
+                    <img class="register_item3" alt="Icono de formulario" src="../assets/img/icon_form.png"> 
+                    <a class="register_item4" [routerLink] = "['/formulario']">Rellenar formulario</a>
+                </div>
+            </div>
+        </div> 
+    </section>
+    <footer class="home-footer"><p class="footer_item">Isabel García Ruiz - grisabel97@outlook.com</p></footer>
+    
+</div>
+
